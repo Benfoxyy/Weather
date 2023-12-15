@@ -1,0 +1,67 @@
+{% extends "base.html" %}{% load static %}{% block body %}
+			<main class="main-content">
+				<div class="container">
+					<div class="breadcrumb">
+						<a href="{% url 'weather:home' %}">Home</a>
+						<span>Contact</span>
+					</div>
+				</div>
+
+				<div class="fullwidth-block">
+					<div class="container">
+						<div class="col-md-5">
+							<div class="contact-details">
+								<div class="contact-info">
+									<address>
+										<p>Tehran/south jannat abad<br>
+										<img src="{% static 'images/icon-marker.png' %}" alt="">
+										<br>Benyamin medqalchi</p>
+									</address>
+									
+									<a href="#"><img src="{% static 'images/icon-phone.png' %}" alt="">09037869383</a>
+									<a href="#"><img src="{% static 'images/icon-envelope.png' %}" alt="">benxfoxy@gmail.com</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-md-offset-1">
+							<h2 class="section-title">Contact us</h2>
+							<p>question box for ask!</p>
+							<form action="{% url 'weather:contact' %}" class="contact-form" method="post">{% csrf_token %}
+								<div class="row">
+									<div class="col-md-6"><input name="name" type="text" placeholder="Your name..."></div>
+									<div class="col-md-6"><input name="email" type="text" placeholder="Email Addresss..."></div>
+								</div>
+								<textarea name="text" placeholder="Message..."></textarea>
+								<div class="text-right">
+									<input type="submit" placeholder="Send message">
+								</div>
+							</form>
+
+						</div>
+						{% if messages %}
+						{% for message in messages %}
+						  <div class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">{{ message|safe }}</div>
+						{% endfor %}
+					  {% endif %}
+					
+					  {% if form.errors %}
+						<div class="alert alert-error">
+						  <h4>Please fix the following errors</h4>
+						  <ul>
+							{% for field in form %}
+							  {% if field.errors %}
+								{% for error in field.errors %}
+								  <li><a href="#id_{{ field.name }}" class="error">{{ error|escape }}</a></li>
+								{% endfor %}
+							  {% endif %}
+							{% endfor %}
+						  </ul>
+						  {% if form.non_field_errors %}
+							{{ form.non_field_errors }}
+						  {% endif %}
+						</div>
+					  {% endif %}
+					  </div>
+					</div>
+				</div>
+			{% endblock %}

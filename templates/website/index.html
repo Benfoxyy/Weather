@@ -1,0 +1,37 @@
+{% extends "base.html" %}{% load static %}{% block body %}
+			<div class="hero" data-bg-image="{% static 'images/city.jpg' %}">
+				<div class="container">
+					<form action="{% url 'weather:home' %}" class="find-location">
+						<input type="text" placeholder="Find your location..." name="s">
+						<input type="submit" value="Find">
+					</form>
+
+				</div>
+			</div>
+			<div class="forecast-table">
+				<div class="container">
+					<div class="forecast-container">
+						<div class="today forecast">
+							<div class="forecast-header">
+								<div class="day">{{day}}</div>
+								<div class="date">{{date}}</div>
+							</div> <!-- .forecast-header -->
+							<div class="forecast-content">
+								<div class="location">{{city}}</div>
+								<div class="degree">
+									<div class="num">{{temp}}<sup>o</sup>C</div>
+									<div class="forecast-icon">
+										<!--<img src="{% static 'images/icons/icon-1.svg' %}" alt="" width=90>-->
+									</div>	
+								</div>
+								<span><img src="{% static 'images/icon-umberella.png' %}" alt="">{{hum}}%</span>
+								<span><img src="{% static 'images/icon-wind.png' %}" alt="">{{wspeed}}km/h</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<main class="main-content">
+				<div class="fullwidth-block">
+			
+{% endblock body %}
