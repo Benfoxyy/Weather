@@ -1,5 +1,3 @@
-from pyexpat import model
-from attr import field
 from django import forms
 from .models import contact
 

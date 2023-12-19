@@ -1,5 +1,11 @@
 asgiref==3.7.2
+attr==0.3.2
+certifi==2023.11.17
+charset-normalizer==3.3.2
 Django==3.2
+idna==3.6
 Pillow==10.1.0
 pytz==2023.3.post1
+requests==2.31.0
 sqlparse==0.4.4
+urllib3==2.1.0
