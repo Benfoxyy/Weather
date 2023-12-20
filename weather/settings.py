@@ -39,11 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'robots',
     'weatherapp',
     'blog',
 ]
 
 SITE_ID = 4
+
+ROBOTS_USE_SITEMAP = False
+ROBOTS_USE_HOST = False
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
