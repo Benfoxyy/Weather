@@ -16,9 +16,10 @@ def get_weather(city):
             wind_speed=data['wind']['speed']
             date=datetime.now().strftime("%b %d")
             day=datetime.now().strftime("%A")
-            return name,tm,hmt,wind_speed,date,day
+            weather=data['weather'][0]['main']
+            print(weather)
+            return name,tm,hmt,wind_speed,date,day,weather
         else:
-            print(data)
             error_type = data['cod']
             rmessage = data['message']
             return error_type,rmessage

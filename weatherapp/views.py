@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .gweather import get_weather
 from .forms import contactform
 from django.contrib import messages
@@ -18,7 +17,7 @@ def index_view(request):
     if info[0]=='404':
         return render(request, 'error/error_404.html',{'error_type':info[0],'rmessage':info[1]})
     else:
-        return render(request, 'website/index.html',{'city':info[0],'temp':info[1],'hum':info[2],'wspeed':info[3],'date':info[4],'day':info[5]})
+        return render(request, 'website/index.html',{'city':info[0],'temp':info[1],'hum':info[2],'wspeed':info[3],'date':info[4],'day':info[5],'weather':info[6]})
 
 
 

@@ -21,7 +21,19 @@
 								<div class="degree">
 									<div class="num">{{temp}}<sup>o</sup>C</div>
 									<div class="forecast-icon">
-										<!--<img src="{% static 'images/icons/icon-1.svg' %}" alt="" width=90>-->
+										{% if weather == 'Clouds' %}
+											<img src="{% static 'images/icons/icon-6.svg' %}" alt="" width=90>
+										{% elif weather == 'Rain' %}
+											<img src="{% static 'images/icons/icon-10.svg' %}" alt="" width=90>
+										{% elif weather == 'Smoke' %}
+											<img src="{% static 'images/icons/icon-7.svg' %}" alt="" width=90>
+										{% elif weather == 'Clear' %}
+											<img src="{% static 'images/icons/icon-2.svg' %}" alt="" width=90>
+										{% elif weather == 'Sand' %}
+											<img src="{% static 'images/icons/icon-7.svg' %}" alt="" width=90>
+										{% elif weather == 'Haze' %}
+											<img src="{% static 'images/icons/icon-7.svg' %}" alt="" width=90>	
+										{% endif %}
 									</div>	
 								</div>
 								<span><img src="{% static 'images/icon-umberella.png' %}" alt="">{{hum}}%</span>
