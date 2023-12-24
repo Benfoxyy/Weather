@@ -3,4 +3,4 @@ from .models import contact
 
 @admin.register(contact)
 class contactAdmin(admin.ModelAdmin):
-    pass
+    list_display=('name', 'email',)
