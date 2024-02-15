@@ -40,8 +40,7 @@
 					<div class="main-navigation">
 						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
 						<ul class="menu">
-							<li class="menu-item current-menu-item"><a href="{% url 'weather:home' %}">Home</a></li>
-							<li class="menu-item"><a href="{% url 'blog:news' %}">News</a></li>
+							<li class="menu-item"><a href="{% url 'weather:home' %}">Home</a></li>
 							<li class="menu-item"><a href="{% url 'weather:contact' %}">Contact</a></li>
 						</ul> <!-- .menu -->
 					</div> <!-- .main-navigation -->
@@ -52,29 +51,6 @@
             {% block body %}
 
             {% endblock body %}
-        </footer> <!-- .site-footer -->
-    </div>
-	</main> <!-- .main-content -->
-			<footer class="site-footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-8">
-							<!--<form action="#" class="subscribe-form">
-								<input type="text" placeholder="Enter your email to subscribe...">
-								<input type="submit" value="Subscribe">
-							</form>-->
-						</div>
-						<div class="col-md-3 col-md-offset-1">
-							<div class="social-links">
-								<a href="https://www.instagram.com/benyfoxy.exe/"><i class="fa fa-instagram"></i></a>
-								<a href="https://github.com/Benfoxyy"><i class="fa fa-github"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<p class="colophon">©️Copyright Benfoxy.</p>
-				</div>
-    
     <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/app.js' %}"></script>

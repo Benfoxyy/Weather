@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'captcha',
     'robots',
     'weatherapp',
-    'blog',
 ]
 
 SITE_ID = 4
