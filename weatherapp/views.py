@@ -1,8 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .gweather import get_weather
-from .forms import contactform
 from django.contrib import messages
-
 
 def search_view(request):
     if request.method == 'GET':
@@ -15,20 +13,6 @@ def index_view(request):
     else:
         info = get_weather(city='Tehran')
     if info[0]=='404':
-        return render(request, 'error/error_404.html',{'error_type':info[0],'rmessage':info[1]})
+        return redirect('/')
     else:
         return render(request, 'website/index.html',{'city':info[0],'temp':info[1],'hum':info[2],'wspeed':info[3],'date':info[4],'day':info[5],'weather':info[6]})
-
-
-
-def contact_view(request):
-    if request.method == 'POST':
-        form=contactform(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.add_message(request,messages.SUCCESS,'your ticket submited successfully')
-        else:
-            messages.add_message(request,messages.ERROR,'your ticket didnt submit successfully')
-    form=contactform()
-
-    return render(request, 'website/contact.html',{'form':form})
