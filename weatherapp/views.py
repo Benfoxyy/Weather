@@ -13,6 +13,6 @@ def index_view(request):
     else:
         info = get_weather(city='Tehran')
     if info[0]=='404':
-        return redirect('/')
+        return render(request,"error/index.html")
     else:
         return render(request, 'website/index.html',{'city':info[0],'temp':info[1],'hum':info[2],'wspeed':info[3],'date':info[4],'day':info[5],'weather':info[6]})
